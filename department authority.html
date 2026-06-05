@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <body>
+<script>
+let password = prompt("Enter Admin Password");
+
+if(password !== "PAHA150920"){
+alert("Access Denied");
+window.location.href = "participant.html";
+}
+</script>
+
+<script>
+function deleteLeaderboard(){
+
+localStorage.removeItem(
+"leaderboard"
+);
+
+leaderboardData = [];
+
+updateLeaderboard();
+
+alert("Leaderboard Deleted");
+
+}
+</script>
+
+<h3>Manual Leaderboard Entry</h3>
+
+<input
+id="leaderboardRank"
+type="number"
+placeholder="Rank">
+
+<input
+id="registrationNumber"
+placeholder="Registration Number">
+
+<input
+id="leaderboardName"
+placeholder="Participant Name">
+
+<input
+id="leaderboardScore"
+type="number"
+placeholder="Score">
+
+<button onclick="addLeaderboard()">
+Add Leaderboard Entry
+</button>
+
+<script>
+
+function addLeaderboard(){
+
+const rank =
+document.getElementById(
+"leaderboardRank"
+).value;
+
+const regNo =
+document.getElementById(
+"registrationNumber"
+).value;
+
+const name =
+document.getElementById(
+"leaderboardName"
+).value;
+
+const score =
+document.getElementById(
+"leaderboardScore"
+).value;
+
+if(
+!rank ||
+!regNo ||
+!name ||
+!score
+){
+
+alert(
+"Fill all fields"
+);
+
+return;
+
+}
+
+leaderboardData.push({
+
+rank:Number(rank),
+
+registrationNumber:regNo,
+
+name:name,
+
+score:Number(score)
+
+});
+
+localStorage.setItem(
+"leaderboard",
+JSON.stringify(
+leaderboardData
+)
+);
+
+updateLeaderboard();
+
+alert(
+"Leaderboard Entry Added"
+);
+
+}
+
+</script>
+
+<div class="container">
+</div>
+
+</body>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Admin Panel</h1>
+
+<input type="text" id="question" placeholder="Question">
+<input type="text" id="option1" placeholder="Option 1">
+<input type="text" id="option2" placeholder="Option 2">
+<input type="text" id="option3" placeholder="Option 3">
+<input type="text" id="option4" placeholder="Option 4">
+<input type="text" id="answer" placeholder="Correct Answer">
+
+<button onclick="addQuestion()">Add Question</button>
+
+<button onclick="deleteLeaderboard()">
+Delete Leaderboard
+</button>
+
+<h2>Question Bank</h2>
+
+<div id="questionList"></div>
+
+<a href="participant.html">
+<button>Go To Quiz</button>
+</a>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
