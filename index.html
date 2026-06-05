@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Brainic Battle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>The Brainic Battle</h1>
+
+<input type="text"
+id="regno"
+placeholder="Registration Number">
+
+<input type="text"
+id="username"
+placeholder="Full Name">
+
+<input type="password"
+id="userpassword"
+placeholder="Password">
+
+<button onclick="startQuiz()">
+Start Quiz
+</button>
+
+<div id="quizSection" class="hidden">
+
+<div id="timer">100</div>
+
+<form id="quizForm"></form>
+
+<button onclick="submitQuiz()">
+Submit Quiz
+</button>
+
+</div>
+
+<div id="resultSection" class="hidden"></div>
+
+<a href="leaderboard.html">
+<button>Leaderboard</button>
+</a>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
