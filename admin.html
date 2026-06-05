@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <body>
+<script>
+let password = prompt("Enter Admin Password");
+
+if(password !== "PAHA150920"){
+alert("Access Denied");
+window.location.href = "participant.html";
+}
+</script>
+
+<div class="container">
+</div>
+
+</body>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Admin Panel</h1>
+
+<input type="text" id="question" placeholder="Question">
+<input type="text" id="option1" placeholder="Option 1">
+<input type="text" id="option2" placeholder="Option 2">
+<input type="text" id="option3" placeholder="Option 3">
+<input type="text" id="option4" placeholder="Option 4">
+<input type="text" id="answer" placeholder="Correct Answer">
+
+<button onclick="addQuestion()">Add Question</button>
+
+<h2>Question Bank</h2>
+
+<div id="questionList"></div>
+
+<a href="participant.html">
+<button>Go To Quiz</button>
+</a>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
