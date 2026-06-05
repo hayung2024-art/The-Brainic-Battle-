@@ -7,7 +7,23 @@ let password = prompt("Enter Admin Password");
 
 if(password !== "PAHA150920"){
 alert("Access Denied");
-window.location.href = "index.html";
+window.location.href = "participant.html";
+}
+</script>
+
+<script>
+function deleteLeaderboard(){
+
+localStorage.removeItem(
+"leaderboard"
+);
+
+leaderboardData = [];
+
+updateLeaderboard();
+
+alert("Leaderboard Deleted");
+
 }
 </script>
 
@@ -32,6 +48,10 @@ window.location.href = "index.html";
 <input type="text" id="answer" placeholder="Correct Answer">
 
 <button onclick="addQuestion()">Add Question</button>
+
+<button onclick="deleteLeaderboard()">
+Delete Leaderboard
+</button>
 
 <h2>Question Bank</h2>
 
